@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-container {
+    display: flex;
+   
+}
+
+aside#sidebar {
+    width: 250px;
+        /* background-image: linear-gradient(
+          340deg,
+          hsl(184deg 98% 77%) 0%,
+          hsl(185deg 98% 76%) 12%,
+          hsl(186deg 98% 76%) 18%,
+          hsl(188deg 99% 76%) 22%,
+          hsl(189deg 99% 76%) 26%,
+          hsl(191deg 99% 75%) 29%,
+          hsl(192deg 99% 75%) 33%,
+          hsl(193deg 99% 75%) 36%,
+          hsl(195deg 99% 75%) 39%,
+          hsl(196deg 99% 74%) 42%,
+          hsl(197deg 99% 74%) 44%,
+          hsl(198deg 99% 74%) 47%,
+          hsl(200deg 99% 74%) 50%,
+          hsl(201deg 99% 73%) 53%,
+          hsl(202deg 99% 73%) 56%,
+          hsl(204deg 99% 73%) 58%,
+          hsl(205deg 100% 72%) 61%,
+          hsl(206deg 100% 72%) 64%,
+          hsl(207deg 100% 72%) 67%,
+          hsl(209deg 100% 72%) 71%,
+          hsl(210deg 100% 71%) 74%,
+          hsl(211deg 100% 71%) 78%,
+          hsl(212deg 100% 71%) 82%,
+          hsl(214deg 100% 70%) 88%,
+          hsl(215deg 100% 70%) 100%
+        ); */
+        background: rgb(137,247,254);
+background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%);
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    font-size: 24px;
+    display: block;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    /* display: none; */
+}
+
+/* .sidebar-header:hover .logo-text {
+    display: none;
+}
+
+.sidebar-header:hover .logo-icon {
+    display: block;
+} */
+
+aside#sidebar ul.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+aside#sidebar ul.nav-links li {
+    margin: 15px 0;
+}
+
+aside#sidebar ul.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-text {
+    display: block;
+}
+
+#sidebar.collapsed .nav-text {
+    display: none;
+}
+
+#sidebar.collapsed .nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.separator {
+    border-top: 1px solid #555;
+    margin: 10px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links img {
+    width: 20px;
+    height: 20px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-image: linear-gradient(
+        340deg,
+        hsl(184deg 98% 77%) 0%,
+        hsl(185deg 98% 76%) 12%,
+        hsl(186deg 98% 76%) 18%,
+        hsl(188deg 99% 76%) 22%,
+        hsl(189deg 99% 76%) 26%,
+        hsl(191deg 99% 75%) 29%,
+        hsl(192deg 99% 75%) 33%,
+        hsl(193deg 99% 75%) 36%,
+        hsl(195deg 99% 75%) 39%,
+        hsl(196deg 99% 74%) 42%,
+        hsl(197deg 99% 74%) 44%,
+        hsl(198deg 99% 74%) 47%,
+        hsl(200deg 99% 74%) 50%,
+        hsl(201deg 99% 73%) 53%,
+        hsl(202deg 99% 73%) 56%,
+        hsl(204deg 99% 73%) 58%,
+        hsl(205deg 100% 72%) 61%,
+        hsl(206deg 100% 72%) 64%,
+        hsl(207deg 100% 72%) 67%,
+        hsl(209deg 100% 72%) 71%,
+        hsl(210deg 100% 71%) 74%,
+        hsl(211deg 100% 71%) 78%,
+        hsl(212deg 100% 71%) 82%,
+        hsl(214deg 100% 70%) 88%,
+        hsl(215deg 100% 70%) 100%
+    );
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+#toggleSidebar{
+    padding-left: 25px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Dark Mode Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: white;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #333;
+}
+
+.user-info span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-info p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* User Icon Styling */
+.user-menu img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0.1px solid #ccc;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.info-cards .card {
+    background-color: #89f6fe62;
+    padding: 20px;
+    width: 23%;
+    height: 200px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.data-table {
+    margin: 20px 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#searchInput {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    margin-left: -30px;
+}
+
+#filterCriteria {
+    margin-left: 10px;
+    padding: 8px;
+}
+
+/* .table-container {
+    max-height: 350px; /* Adjust as needed *
+    overflow-y: auto;
+    overflow-x: auto;
+    position: relative;
+} */
+
+.table-container {
+    position: relative;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    border: 0.1px solid #ddd; /* Optional: Adds a border to the container */
+    border-radius: 10px; /* Optional: Rounds the corners of the container */
+  }
+  
+  /* Custom scrollbar for Firefox */
+  .table-container {
+    scrollbar-width: thin; /* Options: auto, thin, or none */
+    scrollbar-color: gray #f1f1f1; /* Thumb color and track color */
+  }
+  
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px; /* Ensure table is wide enough to fit all columns */
+}
+
+.table-container thead th {
+    position: sticky;
+    top: 0;
+    background-color: #89F7FE; /* Match table header background color */
+    z-index: 1; /* Ensure the header stays above the body content */
+    border-bottom: 2px solid #ddd; /* Optional: adds a bottom border to the header */
+}
+
+.table-container th, .table-container td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table-container th {
+    background-color: #f1f1f1;
+}
+
+.dark-mode-toggle {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode aside#sidebar {
+    background-color: #222;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+/* custom scroll bar */
