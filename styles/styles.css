@@ -44,16 +44,18 @@ aside#sidebar {
           hsl(214deg 100% 70%) 88%,
           hsl(215deg 100% 70%) 100%
         ); */
-        background: rgb(137,247,254);
-background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%);
+    background: rgb(137,247,254);
+    background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%);
     color: #fff;
     padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     transition: width 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 .sidebar-header {
     display: flex;
@@ -113,8 +115,8 @@ aside#sidebar ul.nav-links li a {
 }
 
 #sidebar.collapsed .nav-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .sidebar-footer {
@@ -381,5 +383,87 @@ input:checked + .slider:before {
 .dark-mode header {
     background-color: #333;
 }
+/* ======================================================================================================= */
 
-/* custom scroll bar */
+/* product page css Started */
+.products-container {
+    padding: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add this to your existing CSS */
+.search-filter {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#filterSelect {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+

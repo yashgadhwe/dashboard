@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel Dashboard</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/styleo.css"> -->
+
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h3 class="logo-text nav-text">Logo</h3>
+                <img class="logo-icon nav-icon" src="img/anlytics.png" alt="Logo Icon">
+            </div>
+            <ul class="nav-links">
+                <div class="separator"></div>
+                <li><a href="index.html"><img class="nav-icon" src="img/dashboard.png" alt="Dashboard Icon"> <span class="nav-text">Dashboard</span></a></li>
+                <li><a href="products.html"><img class="nav-icon" src="img/product.png" alt="Users Icon"> <span class="nav-text">Products</span></a></li>
+                <li><a href="analytics.html"><img class="nav-icon" src="img/anlytics.png" alt="Settings Icon"> <span class="nav-text">Experimental tools</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="separator"></div>
+                <ul class="footer-links">
+                    <li><a href="#"><img class="nav-icon" src="img/link.png" alt="Redirect Icon">  <span class="nav-text">Go to Website</span></a></li>
+                    <li><a href="#"><img class="nav-icon" src="img/exit.png" alt="Logout Icon"> <span class="nav-text">Logout</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header>
+                <div class="header-left">
+                    <!-- <button id="toggleSidebar">☰</button> -->
+                    <span id="toggleSidebar"> <img src="img/hamburger.png" alt="" height="25px" width="25px"></span>
+                </div>
+                <div class="header-right">
+                    <!-- Dark Mode Toggle -->
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <!-- Username and Role -->
+                    <div class="user-info">
+                        <span>Hey, Username</span>
+                        <p>Admin</p>
+                    </div>
+                    <!-- User Icon -->
+                    <div class="user-menu">
+                        <img src="img/user.png" alt="User Icon">
+                    </div>
+                </div>
+            </header>
+
+            
+            <!-- Products Page -->
+            <div class="products-container">
+                <div class="buttons-container">
+                    <button id="singleProductBtn" class="btn">Single Product</button>
+                    <button id="multipleDataBtn" class="btn">Multiple Data</button>
+                </div>
+
+                <!-- Single Product Modal -->
+                <div id="singleProductModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Add Single Product</h2>
+                        <form id="singleProductForm">
+                            <input type="text" id="brandName" placeholder="Brand Name" required>
+                            <input type="text" id="productName" placeholder="Product Name" required>
+                            <input type="text" id="productImage" placeholder="Product Image URL" required>
+                            <input type="number" id="offerPrice" placeholder="Offer Price" required>
+                            <input type="number" id="originalPrice" placeholder="Original Price" required>
+                            <input type="number" id="dealPercentage" placeholder="Deal Percentage" required>
+                            <input type="text" id="sizes" placeholder="Sizes (comma separated)" required>
+                            <input type="number" id="rating" placeholder="Rating" required>
+                            <input type="text" id="category" placeholder="Category" required>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Multiple Data Modal -->
+                <div id="multipleDataModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Upload Multiple Products</h2>
+                        <input type="file" id="excelFile" accept=".xlsx, .xls" required>
+                        <p id="fileName"></p>
+                        <button id="submitExcel" class="btn">Submit</button>
+                    </div>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="search-filter">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <select id="filterSelect">
+                        <option value="brandName">Brand Name</option>
+                        <option value="productName">Product Name</option>
+                        <option value="offerPrice">Offer Price</option>
+                        <option value="originalPrice">Original Price</option>
+                        <option value="dealPercentage">Deal Percentage</option>
+                        <option value="sizes">Sizes</option>
+                        <option value="rating">Rating</option>
+                        <option value="category">Category</option>
+                    </select>
+                </div>
+
+
+                <!-- Product Table -->
+                <div class="table-container">
+                    <table id="productTable">
+                        <thead>
+                            <tr>
+                                <th>Sr. No</th>
+                                <th>Brand Name</th>
+                                <th>Product Name</th>
+                                <th>Product Image</th>
+                                <th>Offer Price</th>
+                                <th>Original Price</th>
+                                <th>Deal Percentage</th>
+                                <th>Sizes</th>
+                                <th>Rating</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    <script src="scripts/scripto.js"></script>
+    <!-- use version 0.20.3 -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</body>
+</html>

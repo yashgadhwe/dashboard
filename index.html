@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    
-      
+<body>  
     <div class="dashboard-container">
 
         <!-- Sidebar -->
         <aside id="sidebar">
             <div class="sidebar-header">
-                <h3 class="logo-text">Logo</h3>
-                <img class="logo-icon" src="img/anlytics.png" alt="Logo Icon">
+                <h3 class="logo-text nav-text">Logo</h3>
+                <img class="logo-icon nav-icon" src="img/anlytics.png" alt="Logo Icon">
             </div>
             <ul class="nav-links">
+                <div class="separator"></div>
                 <li><a href="index.html"><img class="nav-icon" src="img/dashboard.png" alt="Dashboard Icon"> <span class="nav-text">Dashboard</span></a></li>
-                <li><a href="order.html"><img class="nav-icon" src="img/product.png" alt="Users Icon"> <span class="nav-text">Products</span></a></li>
+                <li><a href="products.html"><img class="nav-icon" src="img/product.png" alt="Users Icon"> <span class="nav-text">Products</span></a></li>
                 <li><a href="analytics.html"><img class="nav-icon" src="img/anlytics.png" alt="Settings Icon"> <span class="nav-text">Experimental tools</span></a></li>
             </ul>
             <div class="sidebar-footer">
                 <div class="separator"></div>
                 <ul class="footer-links">
-                    <li><a href="#"><img src="img/link.png" alt="Redirect Icon"> Go to Website</a></li>
-                    <li><a href="#"><img src="img/exit.png" alt="Logout Icon"> Logout</a></li>
+                    <li><a href="#"><img class="nav-icon" src="img/link.png" alt="Redirect Icon">  <span class="nav-text">Go to Website</span></a></li>
+                    <li><a href="#"><img class="nav-icon" src="img/exit.png" alt="Logout Icon"> <span class="nav-text">Logout</span></a></li>
                 </ul>
             </div>
         </aside>
@@ -67,47 +66,50 @@
             </section>
 
             <!-- Data Table -->
+             <!-- Search and Filter Section -->
             <section class="data-table">
-                <h2>Product Data</h2>
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <span class="search-icon">🔍</span>
-                    <select id="filterCriteria">
-                        <option value="brand">Brand Name</option>
-                        <option value="product">Product Name</option>
-                        <option value="offerPrice">Offer Price</option>
-                        <option value="originalPrice">Original Price</option>
-                        <option value="dealPercentage">Deal Percentage</option>
-                        <option value="sizes">Sizes</option>
-                        <option value="rating">Rating</option>
-                        <option value="category">Category</option>
-                    </select>
-                </div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Brand Name</th>
-                                <th>Product Name</th>
-                                <th>Product Image</th>
-                                <th>Offer Price</th>
-                                <th>Original Price</th>
-                                <th>Deal Percentage</th>
-                                <th>Sizes</th>
-                                <th>Rating</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Rows will be dynamically inserted here -->
-                        </tbody>
-                    </table>
-                </div>
+                <h2>Product Data</h2>  
+                    <div class="search-filter">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <select id="filterSelect">
+                            <option value="brandName">Brand Name</option>
+                            <option value="productName">Product Name</option>
+                            <option value="offerPrice">Offer Price</option>
+                            <option value="originalPrice">Original Price</option>
+                            <option value="dealPercentage">Deal Percentage</option>
+                            <option value="sizes">Sizes</option>
+                            <option value="rating">Rating</option>
+                            <option value="category">Category</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Product Table -->
+                    <div class="table-container">
+                        <table id="productTable">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No</th>
+                                    <th>Brand Name</th>
+                                    <th>Product Name</th>
+                                    <th>Product Image</th>
+                                    <th>Offer Price</th>
+                                    <th>Original Price</th>
+                                    <th>Deal Percentage</th>
+                                    <th>Sizes</th>
+                                    <th>Rating</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
             </section>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
