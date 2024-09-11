@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
 
     // Dark mode toggle
     document.getElementById('darkModeToggle').addEventListener('change', () => {

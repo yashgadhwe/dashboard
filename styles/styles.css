@@ -44,7 +44,7 @@ aside#sidebar {
           hsl(214deg 100% 70%) 88%,
           hsl(215deg 100% 70%) 100%
         ); */
-    background: rgb(137,247,254);
+    background: #89f7fe;
     background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%);
     color: #fff;
     padding: 20px;
@@ -61,17 +61,17 @@ aside#sidebar {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 30px;
+    margin: 0px 0px 20px 0px;
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 30px;
     display: block;
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     /* display: none; */
 }
 
@@ -110,6 +110,7 @@ aside#sidebar ul.nav-links li a {
     display: block;
 }
 
+
 #sidebar.collapsed .nav-text {
     display: none;
 }
@@ -119,6 +120,14 @@ aside#sidebar ul.nav-links li a {
     height: 30px;
 }
 
+#sidebar.collapsed .logo-text {
+    display: none;
+}
+
+#sidebar.collapsed .logo-icon {
+    width: 40px;
+    height: 40px;
+}
 .sidebar-footer {
     margin-top: auto;
 }
@@ -154,6 +163,8 @@ aside#sidebar ul.nav-links li a {
     flex-grow: 1;
     padding: 20px;
 }
+
+/* onhover onclick css in sidebar */
 
 /* Header Styling */
 header {
@@ -298,10 +309,11 @@ input:checked + .slider:before {
     margin: 20px 0;
 }
 
-.search-container {
+/* .search-container {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    border-radius: 30px;
 }
 
 #searchInput {
@@ -317,7 +329,7 @@ input:checked + .slider:before {
 #filterCriteria {
     margin-left: 10px;
     padding: 8px;
-}
+} */
 
 /* .table-container {
     max-height: 350px; /* Adjust as needed *
@@ -399,7 +411,7 @@ input:checked + .slider:before {
 
 .btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #1bb5c0;
     color: white;
     border: none;
     border-radius: 5px;
@@ -407,7 +419,7 @@ input:checked + .slider:before {
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #1bb5c0;
 }
 
 .modal {
@@ -447,23 +459,34 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
+.heading{
+    display: flex;
+    align-items: right;
+    margin: 20px 0px 30px 20px;
+}
+.heading img{
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
 /* Add this to your existing CSS */
 .search-filter {
-    margin-bottom: 20px;
+    margin: 20px;
     display: flex;
     align-items: center;
+    
 }
 
 #searchInput {
-    padding: 8px;
+    padding: 10px 15px;
     margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 0.1px solid #ccc;
+    border-radius: 15px;
 }
 
 #filterSelect {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border: 0.1px solid #ccc;
+    border-radius: 15px;
 }
 
