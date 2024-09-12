@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
             sidebar.style.width = '250px'
         } else {
             sidebar.classList.add('collapsed');
-            mainContent.style.marginLeft = '20px'; // Adjust margin for collapsed state
+            mainContent.style.marginLeft = '0px'; // Adjust margin for collapsed state
+            sidebar.style.padding = '8px 10px'
             sidebar.style.width = '70px'
         }
     });

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     transition: background-color 0.3s ease;
 }
 
@@ -44,10 +46,10 @@ aside#sidebar {
           hsl(214deg 100% 70%) 88%,
           hsl(215deg 100% 70%) 100%
         ); */
-    background: #89f7fe;
-    background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%);
-    /* background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(44,62,80,1) 100%); */
+    /* background: #89f7fe;
+    background: radial-gradient(circle, rgba(137,247,254,0.5382528011204482) 18%, rgba(102,166,255,1) 100%); */
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(44,62,80,1) 100%);
     color: #fff;
     padding: 20px;
     min-height: 100vh;
@@ -63,11 +65,11 @@ aside#sidebar {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 0px 0px 20px 0px;
+    margin: 10px 10px 20px 10px;
 }
 
 .logo-text {
-    font-size: 30px;
+    font-size: 35px;
     display: block;
 }
 
@@ -97,11 +99,11 @@ aside#sidebar ul.nav-links li {
 aside#sidebar ul.nav-links li a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
+    gap: 8px;
+    padding: 8px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -154,11 +156,11 @@ aside#sidebar ul.nav-links li a {
 .footer-links li a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
+    gap: 8px;
+    padding: 8px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -188,24 +190,67 @@ aside#sidebar ul.nav-links li a {
 } */
 
 /* Hover effect on tabs */
+/* General Sidebar Styling */
+aside#sidebar ul.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on tabs */
 aside#sidebar ul.nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.671); /* Light hover effect */
-    /* border: 0.1px rgba(168, 168, 168, 0.541) solid; */
+    background-color: rgba(255, 255, 255, 0.5); /* Light hover effect */
     color: #fff; /* Maintain white text */
 }
 
 /* Active tab styling */
 aside#sidebar ul.nav-links li a.active {
-    background-color: rgba(255, 255, 255, 0.733); /* Highlight active tab */
+    background-color: rgba(255, 255, 255, 0.781); /* Highlight active tab */
     color: #ffffff; /* Keep white text on active */
     font-weight: bold; /* Make text bold on active */
-    border: 0.1px rgba(148, 148, 148, 0.568) solid;
+    border: 0.1px rgba(173, 173, 173, 0.836) solid;
+}
+
+/* Hover effect for collapsed sidebar */
+#sidebar.collapsed ul.nav-links li a {
+    justify-content: center;
+}
+
+#sidebar.collapsed ul.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Maintain hover effect when collapsed */
+}
+
+#sidebar.collapsed ul.nav-links li a .nav-text {
+    display: none; /* Hide the text in collapsed mode */
+}
+
+#sidebar.collapsed ul.nav-links li a .nav-icon {
+    width: 30px;
+    height: 30px;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* On hover, show full sidebar temporarily */
+#sidebar.collapsed ul.nav-links li a:hover .nav-text {
+    display: inline-block; /* Temporarily show the text on hover */
+    position: absolute;
+    left: 60px;
+    background-color: rgba(0, 0, 0, 0.37); /* Light background */
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
 }
 
 /* Footer links hover */
 .sidebar-footer ul.footer-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.671); /* Light hover effect */
-    /* border: 0.1px rgba(168, 168, 168, 0.541) solid; */
+    background-color: rgba(255, 255, 255, 0.5); /* Light hover effect */
     color: #fff; /* Maintain white text */
     border-radius: 5px;
 }
@@ -336,6 +381,7 @@ input:checked + .slider:before {
     height: 40px;
     border-radius: 50%;
     border: 0.1px solid #ccc;
+    margin-right: 15px;
 }
 
 .info-cards {
@@ -453,9 +499,10 @@ input:checked + .slider:before {
 
 .buttons-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-left: 20px;
 }
 
 .btn {
