@@ -183,20 +183,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Toggle Sidebar
-document.getElementById('toggleSidebar').addEventListener('click', () => {
-    let sidebar = document.getElementById('sidebar');
-    let mainContent = document.querySelector('.main-content');
-    if (sidebar.classList.contains('collapsed')) {
-        sidebar.classList.remove('collapsed');
-        mainContent.style.marginLeft = '0px'; // Reset margin for expanded state
-        sidebar.style.width = '250px'
-    } else {
-        sidebar.classList.add('collapsed');
-        mainContent.style.marginLeft = '20px'; // Adjust margin for collapsed state
-        sidebar.style.width = '70px'
-    }
-});
+// Sidebar toggle
+    document.getElementById('toggleSidebar').addEventListener('click', () => {
+        let sidebar = document.getElementById('sidebar');
+        let mainContent = document.querySelector('.main-content');
+        if (sidebar.classList.contains('collapsed')) {
+            sidebar.classList.remove('collapsed');
+            mainContent.style.marginLeft = '0px'; // Reset margin for expanded state
+            sidebar.style.width = '250px'
+        } else {
+            sidebar.classList.add('collapsed');
+            mainContent.style.marginLeft = '0px'; // Adjust margin for collapsed state
+            sidebar.style.padding = '8px 10px'
+            sidebar.style.width = '70px'
+        }
+    });
 
 // Dark Mode Toggle
 document.getElementById('darkModeToggle').addEventListener('change', function() {
